@@ -10,18 +10,27 @@ export function displayFilms(films) {
       title.textContent = film.title;
   
       const episode = document.createElement('p');
-      episode.textContent = 'Episode: ' + film.episode_id;
+      const episodeLabel = document.createElement('strong');
+      episodeLabel.textContent = 'Episode: ';
+      episode.appendChild(episodeLabel);
+      episode.append(film.episode_id);
   
       const director = document.createElement('p');
-      director.textContent = '<strong>Director:</strong> ' + film.director;
+      const directorLabel = document.createElement('strong');
+      directorLabel.textContent = 'Director: ';
+      director.appendChild(directorLabel);
+      director.append(film.director);
   
       const releaseDate = document.createElement('p');
-      releaseDate.textContent = 'Release Date: ' + film.release_date;
+      const releaseLabel = document.createElement('strong');
+      releaseLabel.textContent = 'Release Date: ';
+      releaseDate.appendChild(releaseLabel);
+      releaseDate.append(film.release_date);
   
-     
       card.appendChild(title);
       card.appendChild(episode);
-      
+      card.appendChild(director);
+      card.appendChild(releaseDate);
   
       container.appendChild(card);
     });
