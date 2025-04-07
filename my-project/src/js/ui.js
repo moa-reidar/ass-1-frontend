@@ -36,3 +36,34 @@ export function displayFilms(films) {
     });
   }
   
+  export function displayPeople(people) {
+    const container = document.querySelector('#people .content');
+    container.innerHTML = ''; // Tømmer tidligere innhold
+  
+    people.forEach(person => {
+      const card = document.createElement('div');
+      card.classList.add('person-card');
+  
+      const name = document.createElement('h3');
+      name.textContent = person.name;
+  
+      const gender = document.createElement('p');
+      const genderLabel = document.createElement('strong');
+      genderLabel.textContent = 'Gender: ';
+      gender.appendChild(genderLabel);
+      gender.append(person.gender);
+  
+      const birthYear = document.createElement('p');
+      const birthYearLabel = document.createElement('strong');
+      birthYearLabel.textContent = 'Birth Year: ';
+      birthYear.appendChild(birthYearLabel);
+      birthYear.append(person.birth_year);
+  
+      card.appendChild(name);
+      card.appendChild(gender);
+      card.appendChild(birthYear);
+  
+      container.appendChild(card);
+    });
+  }
+  
