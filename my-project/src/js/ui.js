@@ -67,3 +67,79 @@ export function displayFilms(films) {
     });
   }
   
+  export function displayPlanets(planets) {
+    const container = document.querySelector('#planets .content');
+    container.innerHTML = ''; // Tømmer tidligere innhold
+  
+    planets.forEach(planet => {
+      const card = document.createElement('div');
+      card.classList.add('planet-card');
+  
+      const name = document.createElement('h3');
+      name.textContent = planet.name;
+  
+      const climate = document.createElement('p');
+      const climateLabel = document.createElement('strong');
+      climateLabel.textContent = 'Climate: ';
+      climate.appendChild(climateLabel);
+      climate.append(planet.climate);
+  
+      const terrain = document.createElement('p');
+      const terrainLabel = document.createElement('strong');
+      terrainLabel.textContent = 'Terrain: ';
+      terrain.appendChild(terrainLabel);
+      terrain.append(planet.terrain);
+  
+      const population = document.createElement('p');
+      const populationLabel = document.createElement('strong');
+      populationLabel.textContent = 'Population: ';
+      population.appendChild(populationLabel);
+      population.append(planet.population);
+  
+      card.appendChild(name);
+      card.appendChild(climate);
+      card.appendChild(terrain);
+      card.appendChild(population);
+  
+      container.appendChild(card);
+    });
+  }
+  
+  export function displayVehicles(vehicles) {
+    const container = document.querySelector('#vehicles .content');
+    container.innerHTML = ''; // Tømmer tidligere innhold
+  
+    vehicles.forEach(vehicle => {
+      const card = document.createElement('div');
+      card.classList.add('vehicle-card');
+  
+      const name = document.createElement('h3');
+      name.textContent = vehicle.name;
+  
+      const model = document.createElement('p');
+      const modelLabel = document.createElement('strong');
+      modelLabel.textContent = 'Model: ';
+      model.appendChild(modelLabel);
+      model.append(vehicle.model);
+  
+      const manufacturer = document.createElement('p');
+      const manufacturerLabel = document.createElement('strong');
+      manufacturerLabel.textContent = 'Manufacturer: ';
+      manufacturer.appendChild(manufacturerLabel);
+      manufacturer.append(vehicle.manufacturer);
+  
+      const costInCredits = document.createElement('p');
+      const costInCreditsLabel = document.createElement('strong');
+      costInCreditsLabel.textContent = 'Cost in Credits: ';
+      costInCredits.appendChild(costInCreditsLabel);
+      costInCredits.append(vehicle.cost_in_credits);
+  
+      card.appendChild(name);
+      card.appendChild(model);
+      card.appendChild(manufacturer);
+      card.appendChild(costInCredits);
+  
+      container.appendChild(card);
+    });
+  }
+  
