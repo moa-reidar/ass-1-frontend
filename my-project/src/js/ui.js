@@ -29,6 +29,13 @@ export function displayFilms(films) {
       releaseDate.appendChild(releaseLabel);
       releaseDate.append(film.release_date);
 
+      const producer = document.createElement('p');
+      const producerLabel = document.createElement('strong');
+      producerLabel.textContent = 'Producer: ';
+      producer.appendChild(producerLabel);
+      producer.append(film.producer); 
+
+
       const openingCrawl = document.createElement('p');
       const openingCrawlLabel = document.createElement('strong');
       openingCrawlLabel.textContent = 'Opening Crawl: ';
@@ -39,6 +46,7 @@ export function displayFilms(films) {
       card.appendChild(episode);
       card.appendChild(director);
       card.appendChild(releaseDate);
+      card.appendChild(producer);
       card.appendChild(openingCrawl);
 
       container.appendChild(card);
@@ -78,6 +86,13 @@ export function displayPeople(people) {
       height.appendChild(heightLabel);
       height.append(person.height);
 
+      const mass = document.createElement('p');
+      const massLabel = document.createElement('strong');
+      massLabel.textContent = 'Mass: ';
+      mass.appendChild(massLabel);
+      mass.append(person.mass);  
+
+
       const eyeColor = document.createElement('p');
       const eyeColorLabel = document.createElement('strong');
       eyeColorLabel.textContent = 'Eye Color: ';
@@ -88,6 +103,7 @@ export function displayPeople(people) {
       card.appendChild(gender);
       card.appendChild(birthYear);
       card.appendChild(height);
+      card.appendChild(mass);
       card.appendChild(eyeColor);
 
       container.appendChild(card);
