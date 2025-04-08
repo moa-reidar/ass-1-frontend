@@ -4,18 +4,19 @@ export function displayFilms(films) {
 
   const limitedFilms = films.slice(0, 6); 
 
-  limitedFilms.forEach(film => {
+  limitedFilms.forEach((film, index) => {
       const card = document.createElement('div');
       card.classList.add('film-card');
 
-      // Bilde for filmen
-      const filmImage = document.createElement('img');
-      filmImage.src = `src/assets/img/film ${film.episode_id}.jpeg`;
-      filmImage.alt = `Film ${film.title}`; 
-      card.appendChild(filmImage); 
-//----------------------
       const title = document.createElement('h3');
       title.textContent = film.title;
+
+     // bilde for filmer
+      const filmImage = document.createElement('img');
+      filmImage.src = `src/assets/img/film ${index + 1}.jpeg`; 
+      filmImage.alt = `Film ${film.title}`; 
+      card.appendChild(title); 
+      card.appendChild(filmImage); 
 
       const episode = document.createElement('p');
       const episodeLabel = document.createElement('strong');
@@ -47,20 +48,15 @@ export function displayFilms(films) {
       openingCrawl.appendChild(openingCrawlLabel);
       openingCrawl.append(film.opening_crawl);
 
-      // Legg til alle elementene til kortet
-      card.appendChild(title);
       card.appendChild(episode);
       card.appendChild(director);
       card.appendChild(releaseDate);
       card.appendChild(producer);
       card.appendChild(openingCrawl);
 
-      // Legg til kortet i containeren
       container.appendChild(card);
   });
 }
-
-
   
 export function displayPeople(people) {
   const container = document.querySelector('#people .content');
@@ -68,12 +64,22 @@ export function displayPeople(people) {
 
   const limitedPeople = people.slice(0, 6);
 
-  limitedPeople.forEach(person => {
+  limitedPeople.forEach((person, index) => { // Bruker index som en unik ID
       const card = document.createElement('div');
       card.classList.add('person-card');
 
+      // Bruker index + 1 som ID for bildet
+      const personId = index + 1;  
+      
       const name = document.createElement('h3');
       name.textContent = person.name;
+
+      // Bilde for personen 
+      const personImage = document.createElement('img');
+      personImage.src = `src/assets/img/person ${personId}.jpeg`; 
+      personImage.alt = `Person: ${person.name}`;
+      card.appendChild(name);
+      card.appendChild(personImage);
 
       const gender = document.createElement('p');
       const genderLabel = document.createElement('strong');
@@ -99,14 +105,12 @@ export function displayPeople(people) {
       mass.appendChild(massLabel);
       mass.append(person.mass);  
 
-
       const eyeColor = document.createElement('p');
       const eyeColorLabel = document.createElement('strong');
       eyeColorLabel.textContent = 'Eye Color: ';
       eyeColor.appendChild(eyeColorLabel);
       eyeColor.append(person.eye_color);
 
-      card.appendChild(name);
       card.appendChild(gender);
       card.appendChild(birthYear);
       card.appendChild(height);
@@ -124,12 +128,22 @@ export function displayPlanets(planets) {
 
   const limitedPlanets = planets.slice(0, 6);
 
-  limitedPlanets.forEach(planet => {
+  limitedPlanets.forEach((planet, index) => { // Bruker index som en unik ID
       const card = document.createElement('div');
       card.classList.add('planet-card');
 
+      // Bruker index + 1 som ID for bildet
+      const planetId = index + 1;  
+      
       const name = document.createElement('h3');
       name.textContent = planet.name;
+
+      // Bilde for planeten 
+      const planetImage = document.createElement('img');
+      planetImage.src = `src/assets/img/planet ${planetId}.jpeg`;  
+      planetImage.alt = `Planet: ${planet.name}`;
+      card.appendChild(name); 
+      card.appendChild(planetImage); 
 
       const climate = document.createElement('p');
       const climateLabel = document.createElement('strong');
@@ -161,7 +175,6 @@ export function displayPlanets(planets) {
       orbitalPeriod.appendChild(orbitalPeriodLabel);
       orbitalPeriod.append(planet.orbital_period);
 
-      card.appendChild(name);
       card.appendChild(climate);
       card.appendChild(terrain);
       card.appendChild(population);
@@ -172,19 +185,28 @@ export function displayPlanets(planets) {
   });
 }
 
-
 export function displayVehicles(vehicles) {
   const container = document.querySelector('#vehicles .content');
   container.innerHTML = ''; // Tømmer tidligere innhold
 
   const limitedVehicles = vehicles.slice(0, 6);
 
-  limitedVehicles.forEach(vehicle => {
+  limitedVehicles.forEach((vehicle, index) => { // Bruker index som en unik ID
       const card = document.createElement('div');
       card.classList.add('vehicle-card');
 
+      // Bruker index + 1 som ID for bildet
+      const vehicleId = index + 1;  
+      
       const name = document.createElement('h3');
       name.textContent = vehicle.name;
+
+      // Bilde for kjøretøyet 
+      const vehicleImage = document.createElement('img');
+      vehicleImage.src = `src/assets/img/vehicle ${vehicleId}.jpeg`; 
+      vehicleImage.alt = `Vehicle: ${vehicle.name}`;
+      card.appendChild(name); 
+      card.appendChild(vehicleImage); 
 
       const model = document.createElement('p');
       const modelLabel = document.createElement('strong');
@@ -216,7 +238,7 @@ export function displayVehicles(vehicles) {
       cargoCapacity.appendChild(cargoCapacityLabel);
       cargoCapacity.append(vehicle.cargo_capacity);
 
-      card.appendChild(name);
+      
       card.appendChild(model);
       card.appendChild(manufacturer);
       card.appendChild(costInCredits);
@@ -226,5 +248,3 @@ export function displayVehicles(vehicles) {
       container.appendChild(card);
   });
 }
-
-  
