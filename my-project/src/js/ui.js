@@ -2,12 +2,18 @@ export function displayFilms(films) {
   const container = document.querySelector('#films .content');
   container.innerHTML = ''; // Tømmer tidligere innhold
 
-  const limitedFilms = films.slice(0, 6);
+  const limitedFilms = films.slice(0, 6); 
 
   limitedFilms.forEach(film => {
       const card = document.createElement('div');
       card.classList.add('film-card');
 
+      // Bilde for filmen
+      const filmImage = document.createElement('img');
+      filmImage.src = `src/assets/img/film ${film.episode_id}.jpeg`;
+      filmImage.alt = `Film ${film.title}`; 
+      card.appendChild(filmImage); 
+//----------------------
       const title = document.createElement('h3');
       title.textContent = film.title;
 
@@ -35,13 +41,13 @@ export function displayFilms(films) {
       producer.appendChild(producerLabel);
       producer.append(film.producer); 
 
-
       const openingCrawl = document.createElement('p');
       const openingCrawlLabel = document.createElement('strong');
       openingCrawlLabel.textContent = 'Opening Crawl: ';
       openingCrawl.appendChild(openingCrawlLabel);
       openingCrawl.append(film.opening_crawl);
 
+      // Legg til alle elementene til kortet
       card.appendChild(title);
       card.appendChild(episode);
       card.appendChild(director);
@@ -49,6 +55,7 @@ export function displayFilms(films) {
       card.appendChild(producer);
       card.appendChild(openingCrawl);
 
+      // Legg til kortet i containeren
       container.appendChild(card);
   });
 }
