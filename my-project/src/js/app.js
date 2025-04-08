@@ -1,11 +1,6 @@
-import { fetchFilms } from './api.js';
-import { fetchPeople } from './api.js'; 
-import { fetchPlanets } from './api.js'; 
-import { fetchVehicles } from './api.js'; 
-import { displayFilms } from './ui.js';
-import { displayPeople } from './ui.js'; 
-import { displayPlanets } from './ui.js'; 
-import { displayVehicles } from './ui.js'; 
+import { fetchFilms, fetchPeople, fetchPlanets, fetchVehicles } from './api.js';
+import { displayFilms, displayPeople, displayPlanets, displayVehicles } from './ui.js';
+
 
 document.getElementById('films-btn').addEventListener('click', async () => {
   try {
