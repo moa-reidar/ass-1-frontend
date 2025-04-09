@@ -1,119 +1,137 @@
-
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url(../fonts/Roboto-Regular.ttf);
+  }
+  
+@font-face {
+    font-family: "Roboto-Bold";
+    src: url(../fonts/Roboto-Bold.ttf);
+  }
+  
+  @font-face {
+    font-family: "Oswald";
+    src: url(../fonts/Oswald-VariableFont_wght.ttf);
+  }
+  
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--main-bg-color);
-    color: var(--text-color);
+    font-family: var(--font-family-new),Arial, Helvetica, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-bg-color); 
+    justify-content: space-between;
+}
+
+/* Header styling */
+header {
+    background-color: var(--text-color); 
+    color: var(--card-bg-color); 
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Main layout for content */
+main {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
     padding: 20px;
+}
+
+/* Navigation buttons style */
+nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+nav button {
+    background-color: var(--primary-color); 
+    color: var(--card-bg-color); 
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: var(--border-radius); 
+}
+
+nav button:hover {
+    background-color: var(--secondary-color); 
+}
+
+/* Content sections styling */
+.category {
+    display: none;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--card-bg-color); 
+    border-radius: var(--border-radius); 
+    box-shadow: var(--box-shadow); 
+}
+
+.category h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.category .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding: 10px;
+}
+
+/* Individual card styling */
+.category .content .film-card,
+.category .content .person-card,
+.category .content .planet-card,
+.category .content .vehicle-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 10px;
+    border-radius: var(--border-radius); 
+    background-color: var(--card-bg-color); 
+    box-shadow: var(--box-shadow); 
     text-align: center;
 }
 
 
-header {
-    margin-bottom: 30px;
-}
-
-header h1 {
-    font-size: 2rem;
-    color: var(--primary-color);
-}
-
-
-nav {
-    margin-bottom: 30px;
-}
-
-nav button {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    margin: 0 5px;
-    border-radius: 4px;
-}
-
-nav button:hover {
-    background-color: #34495e;
-}
-
-
-main {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px 0;
-}
-
-
-.category {
-    background-color: var(--card-bg-color);
-    padding: 20px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-}
-
-.category h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-}
-
-
-.card {
-    background-color: var(--card-bg-color);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    padding: 15px;
-    text-align: left;
-}
-
-.card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: var(--border-radius);
-    margin-bottom: 15px;
-}
-
-.card h3 {
-    font-size: 1.25rem;
-    color: var(--primary-color);
+.category .content img {
+    width: 100%;
+    height: auto; 
+    max-height: 100%; 
+    object-fit: contain; 
+    border-radius: var(--border-radius); 
     margin-bottom: 10px;
-}
-
-.card p {
-    font-size: 1rem;
-    margin: 5px 0;
-}
-
-.card strong {
-    font-weight: bold;
 }
 
 
 footer {
-    margin-top: 40px;
-    font-size: 0.875rem;
-    color: var(--primary-color);
+    background-color: var(--text-color); 
+    color: var(--card-bg-color); 
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8rem;
 }
 
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    body {
-        padding: 15px;
-    }
-
-    .card {
-        padding: 10px;
+    .category .content {
+        grid-template-columns: 1fr;
     }
 
     nav {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-
-    nav button {
-        margin: 0 10px;
+        flex-direction: column;
     }
 }
