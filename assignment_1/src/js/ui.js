@@ -1,6 +1,6 @@
 export function displayFilms(films) {
   const container = document.querySelector('#films .content');
-  container.innerHTML = ''; // Tømmer tidligere innhold
+  container.innerHTML = ''; 
 
   const limitedFilms = films.slice(0, 6); 
 
@@ -11,7 +11,7 @@ export function displayFilms(films) {
       const title = document.createElement('h3');
       title.textContent = film.title;
 
-     // bilde for filmer
+     
       const filmImage = document.createElement('img');
       filmImage.src = `src/assets/img/film ${index + 1}.jpeg`; 
       filmImage.alt = `Film ${film.title}`; 
@@ -60,21 +60,18 @@ export function displayFilms(films) {
   
 export function displayPeople(people) {
   const container = document.querySelector('#people .content');
-  container.innerHTML = ''; // Tømmer tidligere innhold
+  container.innerHTML = ''; 
 
   const limitedPeople = people.slice(0, 6);
 
-  limitedPeople.forEach((person, index) => { // Bruker index som en unik ID
+  limitedPeople.forEach((person, index) => { 
       const card = document.createElement('div');
       card.classList.add('person-card');
-
-      // Bruker index + 1 som ID for bildet
       const personId = index + 1;  
-      
       const name = document.createElement('h3');
       name.textContent = person.name;
 
-      // Bilde for personen 
+     
       const personImage = document.createElement('img');
       personImage.src = `src/assets/img/person ${personId}.jpeg`; 
       personImage.alt = `Person: ${person.name}`;
@@ -124,21 +121,21 @@ export function displayPeople(people) {
 
 export function displayPlanets(planets) {
   const container = document.querySelector('#planets .content');
-  container.innerHTML = ''; // Tømmer tidligere innhold
+  container.innerHTML = ''; 
 
   const limitedPlanets = planets.slice(0, 6);
 
-  limitedPlanets.forEach((planet, index) => { // Bruker index som en unik ID
+  limitedPlanets.forEach((planet, index) => { 
       const card = document.createElement('div');
       card.classList.add('planet-card');
 
-      // Bruker index + 1 som ID for bildet
+      
       const planetId = index + 1;  
       
       const name = document.createElement('h3');
       name.textContent = planet.name;
 
-      // Bilde for planeten 
+      
       const planetImage = document.createElement('img');
       planetImage.src = `src/assets/img/planet ${planetId}.jpeg`;  
       planetImage.alt = `Planet: ${planet.name}`;
@@ -185,23 +182,23 @@ export function displayPlanets(planets) {
   });
 }
 
+
 export function displayVehicles(vehicles) {
   const container = document.querySelector('#vehicles .content');
-  container.innerHTML = ''; // Tømmer tidligere innhold
+  container.innerHTML = ''; 
 
   const limitedVehicles = vehicles.slice(0, 6);
 
-  limitedVehicles.forEach((vehicle, index) => { // Bruker index som en unik ID
+  limitedVehicles.forEach((vehicle, index) => { 
       const card = document.createElement('div');
       card.classList.add('vehicle-card');
 
-      // Bruker index + 1 som ID for bildet
       const vehicleId = index + 1;  
       
       const name = document.createElement('h3');
       name.textContent = vehicle.name;
 
-      // Bilde for kjøretøyet 
+
       const vehicleImage = document.createElement('img');
       vehicleImage.src = `src/assets/img/vehicle ${vehicleId}.jpeg`; 
       vehicleImage.alt = `Vehicle: ${vehicle.name}`;
