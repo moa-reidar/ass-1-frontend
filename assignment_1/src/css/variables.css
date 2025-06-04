@@ -1,0 +1,17 @@
+
+:root {
+    --main-bg-color: #f4f4f4;
+    --primary-color: #2c3e50;
+    --secondary-color: #ecf0f1;
+    --card-bg-color: #ffffff;
+    --text-color: #333;
+
+    
+    --border-radius: 8px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
+    --font-family-regular:"Roboto-Regular";
+    --font-family-bold:"Roboto-Bold";
+    --font-family-new:"Oswald";
+}
