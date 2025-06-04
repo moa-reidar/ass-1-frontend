@@ -1,4 +1,5 @@
-
+Netlify Link: https://euphonious-lamington-748f10.netlify.app/
+Github Link: https://github.com/moa-reidar/ass-1-frontend.git
 # Star Wars API Viewer
 
 ## Project Description
