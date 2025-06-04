@@ -32,6 +32,7 @@ The purpose of this project is to showcase how to interact with an external API,
 
 5. Open your browser and navigate to `http://localhost:(some number)/` to see the application in action.
 
+
 ## Usage Instructions
 
 To use this application, simply open it in a browser. The website will display buttons that allow you to view different categories such as **Films**, **People**, **Planets**, and **Vehicles**. Clicking on any of these buttons will fetch the respective data from the Star Wars API and display it in a neat, responsive grid layout.
